@@ -47,7 +47,6 @@
 .theme--dark .elevation1AppBar {
   background-color: #0b181f !important;
 }
-
 .theme--dark .elevation1 {
   background-color: #031c28 !important;
 }
@@ -104,5 +103,8 @@
 }
 .v-main {
   z-index: 0;
+}
+.theme--dark .popUp {
+  background-color: #031c28 !important;
 }
 </style>

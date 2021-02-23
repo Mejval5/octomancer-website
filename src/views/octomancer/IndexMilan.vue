@@ -332,7 +332,7 @@
                     @click="() => {
                       this.$router.push('/supportUs')
                       showMainMenu = !showMainMenu
-                      showSupportUsPage = !showSupportUsPage
+                      showSupportUsPage = true
                     }"
                   >
                     SUPPORT US
@@ -353,14 +353,42 @@
                   </v-btn>
                 </v-card>
               </v-fade-transition>
-              <octo-octomancer
+              <octo-page
                 :visible="showOctomancerPage"
-                @clicked="goBack"
-              />
-              <octo-brotagonists
+              >
+                <octo-octomancer-inner
+                  :visible="showOctomancerPage"
+                  @clicked="goBack"
+                />
+              </octo-page>
+
+              <octo-page
                 :visible="showBrotagonistsPage"
-                @clicked="goBack"
-              />
+              >
+                <octo-brotagonists-inner
+                  :visible="showBrotagonistsPage"
+                  @clicked="goBack"
+                />
+              </octo-page>
+
+              <octo-page
+                :visible="showSupportUsPage"
+              >
+                <octo-support-us-inner
+                  :visible="showSupportUsPage"
+                  @clicked="goBack"
+                />
+              </octo-page>
+
+              <octo-page
+                :visible="showContactPage"
+              >
+                <octo-contact-inner
+                  :visible="showContactPage"
+                  @clicked="goBack"
+                />
+              </octo-page>
+
             </v-col>
           </v-row>
           <v-row
