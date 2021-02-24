@@ -107,4 +107,5 @@
 .theme--dark .popUp {
   background-color: #031c28 !important;
 }
+.grecaptcha-badge { visibility: hidden; }
 </style>

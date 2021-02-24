@@ -10,7 +10,7 @@
       align-content="center"
       justify="center"
       no-gutters
-      class="d-md-none mb-3"
+      class="d-sm-none mb-3"
     >
       <v-col>
         <v-btn
@@ -37,7 +37,7 @@
           justify="center"
         >
           <v-col
-            class="d-none d-md-block text-right py-0"
+            class="d-none d-sm-block text-right py-0"
             align-self="stretch"
             cols="1"
           >
@@ -55,17 +55,18 @@
           <v-col
             class="pr-md-5"
             cols="12"
-            md="11"
+            sm="10"
           >
-            Contact US!
+            <octo-contact-us />
           </v-col>
+          <v-spacer class="d-none d-sm-block" />
         </v-row>
         <v-row
         dense
         align-content="center"
         justify="center"
         no-gutters
-        class="d-md-none mb-15"
+        class="d-sm-none mb-15"
       >
         <v-col>
           <v-btn
@@ -111,7 +112,7 @@
     },
     computed: {
       centerOnPC () {
-        return this.$vuetify.breakpoint.lgAndUp ? 'center' : ''
+        return this.$vuetify.breakpoint.smAndUp ? 'center' : ''
       },
     },
     methods: {

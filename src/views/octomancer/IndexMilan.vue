@@ -469,12 +469,6 @@
       },
     },
 
-    beforeRouteUpdate (to, from, next) {
-      console.log(to)
-      console.log(from)
-      console.log(next)
-    },
-
     mounted () {
       var scene = document.getElementById('scene')
       // this.parallaxInstance = new Parallax(scene)
@@ -495,7 +489,6 @@
 
     methods: {
       showMenuByPage () {
-        console.log(this.$route.params.pageName)
         if (this.$route.params.pageName === 'octomancer') {
           this.showOctomancerPage = true
           this.showMainMenu = false

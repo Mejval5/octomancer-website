@@ -22,6 +22,7 @@
     order-sm="2"
     >
         <v-img
+        eager
         width="30vh"
         class="clip mx-auto"
         :src="require(`@/${devInfo.pic}`)"

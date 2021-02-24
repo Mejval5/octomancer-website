@@ -56,9 +56,11 @@
             class="pr-md-5"
             cols="12"
             md="11"
+            lg="10"
           >
             <octo-devs />
           </v-col>
+          <v-spacer class="d-none d-lg-block" />
         </v-row>
         <v-row
         dense

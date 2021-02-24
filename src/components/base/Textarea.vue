@@ -4,7 +4,7 @@
     dense
     single-line
     v-bind="{
-      rows: 6,
+      rows: 8,
       ...$attrs,
     }"
     v-on="$listeners"

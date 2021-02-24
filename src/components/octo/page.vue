@@ -20,8 +20,8 @@
           style="height: inherit"
           class="hideScroll"
           cols="12"
-          lg="10"
-          xl="8"
+          lg="11"
+          xl="9"
         >
           <slot
             :visible="visible"

@@ -13,19 +13,27 @@
         <v-card-title
         class="primaryText"
         >
+        <v-container>
+          <v-row>
+            <v-col>
           <span
           :class="$vuetify.breakpoint.smAndDown ? &quot;mx-auto headline&quot; : &quot;headline&quot;"
           >Sign up for Closed Beta</span>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="red"
-            icon
-            tile
-            dark
-            @click="dialog = false"
-          >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
+            </v-col>
+            <v-col cols="auto">
+            <v-spacer></v-spacer>
+            <v-btn
+              color="red"
+              icon
+              tile
+              dark
+              @click="dialog = false"
+            >
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
         </v-card-title>
         <v-card-text>
           <v-container>
@@ -43,6 +51,13 @@
                 ></v-text-field>
               </v-col>
             </v-row>
+          <div
+          class="primaryText text-caption"
+          >
+          This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+          </div>
           </v-container>
         </v-card-text>
         <v-card-actions>
@@ -60,19 +75,21 @@
       </v-card>
     </v-dialog>
     <octo-email-saved
-    ref="snack01"
+    ref="dialog01"
     timeout="3000"
     />
   </v-row>
 </template>
 
 <script>
+
   export default {
     props: {
       updateSnack: Boolean,
       text: String,
       timeout: String,
     },
+
     data: () => ({
       dialog: false,
       email: '',
@@ -90,11 +107,23 @@
         const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,5})+$/
         return re.test(mail)
       },
-      save_email () {
+      async save_email () {
+        const token = await this.recaptcha()
+        console.log(token)
         this.emailRulesProp = this.emailRules
-        if (this.test_email(this.email)) {
-          this.axios.post('https://us-central1-website-raccoon.cloudfunctions.net/uploadEmail?text=' + this.email, this.email,
-                          { headers: { 'Access-Control-Allow-Origin': '*' } }).catch()
+        if (this.test_email(this.email)) {          
+          let adress = 'https://us-central1-octomancer-website.cloudfunctions.net/uploadEmail'
+          adress += '?text=' + this.email
+          adress += '&token=' + token
+          this.axios(
+            {
+              method: 'post',
+              url: adress,
+              data: {
+              },
+              headers: { 'Access-Control-Allow-Origin': '*' },
+            },
+          ).catch()
           // // this captures and saves the email for later use
           // const Http = new XMLHttpRequest()
           // const url = 'https://us-central1-website-raccoon.cloudfunctions.net/uploadMail?text=' + this.email
@@ -103,8 +132,16 @@
           this.email = ''
           this.dialog = false
           this.emailRulesProp = []
-          this.$refs.snack01.openDialog()
+          this.$refs.dialog01.openDialog()
         }
+      },
+      async recaptcha () {
+        // (optional) Wait until recaptcha has been loaded.
+        await this.$recaptchaLoaded()
+
+        // Execute reCAPTCHA with action "login".
+        return await this.$recaptcha('login')
+        // Do stuff with the received token.
       },
     },
   }

@@ -56,7 +56,7 @@
             class="pr-md-5"
             cols="12"
             md="6"
-            lg="7"
+            lg="6"
             order="1"
           >
             <octo-game-description />
@@ -73,6 +73,12 @@
               :visible="visible"
               :time="3"
             />
+          </v-col>
+          <v-col
+          order="5"
+          cols="1"
+          class="d-none d-lg-block"
+          >
           </v-col>
         </v-row>
         <v-row

@@ -10,7 +10,7 @@
       rounded
       >
         <v-card-title class="primaryText">
-          Email saved
+          {{text}}
         </v-card-title>
 
         <v-card-actions>
@@ -40,6 +40,10 @@
       timeout: {
         type: String,
         default: '2000',
+      },
+      text: {
+        type: String,
+        default: 'Email saved',
       },
     },
 
