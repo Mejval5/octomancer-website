@@ -9,7 +9,7 @@ import './plugins'
 
 Vue.use(VueAxios, axios)
 Vue.use(VueReCaptcha, {
-  siteKey: '6Ldd-2UaAAAAAFHgC4fsGfakPIFDn_A98fZEJRRd',
+  siteKey: '6LczGWYaAAAAAI2z15WHcbj8AeRB_iaxSaU8iAQE',
   loaderOptions: {
     useRecaptchaNet: true,
   },

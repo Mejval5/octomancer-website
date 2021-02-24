@@ -5,9 +5,9 @@
     dense
   >
     <v-col
-    v-for="(item, i) in tags"
-    :key="i"
-    cols="auto"
+      v-for="(item, i) in tags"
+      :key="i"
+      cols="auto"
     >
       <octo-list-item
         :text="item.text"

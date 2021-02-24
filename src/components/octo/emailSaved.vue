@@ -4,17 +4,16 @@
       v-model="dialog"
       width="500"
     >
-
       <v-card
-      class="popUp"
-      rounded
+        class="popUp"
+        rounded
       >
         <v-card-title class="primaryText">
-          {{text}}
+          {{ text }}
         </v-card-title>
 
         <v-card-actions>
-          <v-spacer></v-spacer>
+          <v-spacer />
           <v-btn
             class="linkTextBright"
             text
@@ -23,13 +22,11 @@
             OK
           </v-btn>
         </v-card-actions>
-            <v-progress-linear
-            v-model="timeBar"
-            color="#9cb1bb"
-            >
-            </v-progress-linear>
+        <v-progress-linear
+          v-model="timeBar"
+          color="#9cb1bb"
+        />
       </v-card>
-
     </v-dialog>
   </div>
 </template>
@@ -45,6 +42,14 @@
         type: String,
         default: 'Email saved',
       },
+    },
+
+    data () {
+      return {
+        dialog: false,
+        timeBar: 100,
+        interval: 0,
+      }
     },
 
     methods: {
@@ -67,14 +72,6 @@
           this.timeBar -= 2 / parseInt(this.timeout) * 1000
         }, 20)
       },
-    },
-
-    data () {
-      return {
-        dialog: false,
-        timeBar: 100,
-        interval: 0,
-      }
     },
   }
 </script>

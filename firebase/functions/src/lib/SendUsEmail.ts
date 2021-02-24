@@ -1,7 +1,7 @@
 /* eslint max-len: ["error", { "code": 200 }]*/
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
-import {secret_key} from "./secret_key";
+import {secretKey} from "./SecretKey";
 
 const rp = require("request-promise");
 
@@ -20,7 +20,7 @@ export const _sendUsEmail = functions.https.onRequest(
           uri: "https://recaptcha.google.com/recaptcha/api/siteverify",
           method: "POST",
           formData: {
-            secret: secret_key,
+            secret: secretKey,
             response: tokenString,
           },
           json: true,

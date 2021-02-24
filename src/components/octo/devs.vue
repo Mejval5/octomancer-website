@@ -1,36 +1,21 @@
 <template>
   <v-container>
-      <octo-dev-info
-      :devInfo="devs[0]"
+    <octo-dev-info
+      :dev-info="devs[0]"
       class="mb-5"
-      />
-      <v-divider
+    />
+    <v-divider
       class="mb-10"
-      />
-      <octo-dev-info
-      :devInfo="devs[1]"
+    />
+    <octo-dev-info
+      :dev-info="devs[1]"
       reverse
-      />
+    />
   </v-container>
 </template>
 
 <script>
   export default {
-    created () {
-      this.scrambleDevs()
-    },
-    methods: {
-      scrambleDevs () {
-        const rand = Math.random()
-        if (rand > 0.5) {
-          this.devs[0] = this.devInfo1
-          this.devs[1] = this.devInfo2
-        } else {
-          this.devs[0] = this.devInfo2
-          this.devs[1] = this.devInfo1
-        }
-      },
-    },
     data () {
       return {
         devs: [],
@@ -67,6 +52,21 @@
           `,
         },
       }
+    },
+    created () {
+      this.scrambleDevs()
+    },
+    methods: {
+      scrambleDevs () {
+        const rand = Math.random()
+        if (rand > 0.5) {
+          this.devs[0] = this.devInfo1
+          this.devs[1] = this.devInfo2
+        } else {
+          this.devs[0] = this.devInfo2
+          this.devs[1] = this.devInfo1
+        }
+      },
     },
   }
 </script>

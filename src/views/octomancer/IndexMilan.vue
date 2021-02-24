@@ -263,18 +263,17 @@
                       >
                     </div>
                     <div
-                    v-show="!showMainMenu"
-                    id="bg23"
-                    data-depth="0.84"
-                    class="bgLight mybg"
-                    style="height: 100%; width: 100%;"
+                      v-show="!showMainMenu"
+                      id="bg23"
+                      data-depth="0.84"
+                      class="bgLight mybg"
+                      style="height: 100%; width: 100%;"
                     >
                       <v-sheet
-                      height="100%"
-                      width="100%"
-                      color="rgba(8,18,20,0.9)"
-                      >
-                      </v-sheet>
+                        height="100%"
+                        width="100%"
+                        color="rgba(8,18,20,0.9)"
+                      />
                     </div>
                     <!--    <div
                       id="bg23"
@@ -388,7 +387,6 @@
                   @clicked="goBack"
                 />
               </octo-page>
-
             </v-col>
           </v-row>
           <v-row

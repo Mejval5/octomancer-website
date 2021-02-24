@@ -1,6 +1,6 @@
 <template>
   <div
-  :class="$vuetify.breakpoint.mdAndUp ? 'text-right' : 'text-center'"
+    :class="$vuetify.breakpoint.mdAndUp ? 'text-right' : 'text-center'"
   >
     <v-form
       ref="form"
@@ -51,17 +51,17 @@
       >
         Send message
       </v-btn>
-          <div
-          class="primaryText mb-5 text-caption"
-          >
-          This site is protected by reCAPTCHA and the Google
-    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-          </div>
+      <div
+        class="primaryText mb-5 text-caption"
+      >
+        This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+      </div>
       <octo-email-saved
-      ref="dialog01"
-      timeout="3000"
-      text="Email sent!"
+        ref="dialog01"
+        timeout="3000"
+        text="Email sent!"
       />
     </v-form>
   </div>
@@ -106,7 +106,8 @@
       are_all_fields_filled () {
         return this.name !== '' && this.email !== '' && this.subject !== '' && this.text !== ''
       },
-      save_email () {
+      async save_email () {
+        const token = await this.recaptcha()
         this.validate()
         if (this.test_email(this.email) && this.are_all_fields_filled()) {
           let adress = 'https://us-central1-octomancer-website.cloudfunctions.net/sendUsEmail'
@@ -114,6 +115,7 @@
           adress += '&email=' + this.email
           adress += '&subject=' + this.subject
           adress += '&text=' + this.text
+          adress += '&token=' + token
           this.axios(
             {
               method: 'post',
@@ -138,6 +140,14 @@
       },
       resetValidation () {
         this.$refs.form.resetValidation()
+      },
+      async recaptcha () {
+        // (optional) Wait until recaptcha has been loaded.
+        await this.$recaptchaLoaded()
+
+        // Execute reCAPTCHA with action "login".
+        return await this.$recaptcha('login')
+        // Do stuff with the received token.
       },
     },
 

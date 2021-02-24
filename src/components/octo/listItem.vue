@@ -2,13 +2,13 @@
   <v-chip
     class="ma-2"
     v-bind="$attrs"
-    v-on="$listeners"
     outlined
-    @click=clickedAnimation
+    v-on="$listeners"
+    @click="clickedAnimation"
   >
     <v-icon
-    left
-    :color="iconColor"
+      left
+      :color="iconColor"
     >
       {{ icon }}
     </v-icon>

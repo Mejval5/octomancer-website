@@ -11,4 +11,4 @@ typings/
 # Node.js dependency directory
 node_modules/
 
-src/lib/secret_key.ts
+src/lib/SecretKey.ts

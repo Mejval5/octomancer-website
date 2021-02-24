@@ -7,33 +7,33 @@
       overlay-color="#081214"
     >
       <v-card
-      rounded
-      class="popUp"
+        rounded
+        class="popUp"
       >
         <v-card-title
-        class="primaryText"
+          class="primaryText"
         >
-        <v-container>
-          <v-row>
-            <v-col>
-          <span
-          :class="$vuetify.breakpoint.smAndDown ? &quot;mx-auto headline&quot; : &quot;headline&quot;"
-          >Sign up for Closed Beta</span>
-            </v-col>
-            <v-col cols="auto">
-            <v-spacer></v-spacer>
-            <v-btn
-              color="red"
-              icon
-              tile
-              dark
-              @click="dialog = false"
-            >
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-            </v-col>
-          </v-row>
-        </v-container>
+          <v-container>
+            <v-row>
+              <v-col>
+                <span
+                  :class="$vuetify.breakpoint.smAndDown ? &quot;mx-auto headline&quot; : &quot;headline&quot;"
+                >Sign up for Closed Beta</span>
+              </v-col>
+              <v-col cols="auto">
+                <v-spacer />
+                <v-btn
+                  color="red"
+                  icon
+                  tile
+                  dark
+                  @click="dialog = false"
+                >
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-card-title>
         <v-card-text>
           <v-container>
@@ -48,20 +48,20 @@
                   label="Email"
                   required
                   outlined
-                ></v-text-field>
+                />
               </v-col>
             </v-row>
-          <div
-          class="primaryText text-caption"
-          >
-          This site is protected by reCAPTCHA and the Google
-    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-          </div>
+            <div
+              class="primaryText text-caption"
+            >
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </div>
           </v-container>
         </v-card-text>
         <v-card-actions>
-          <v-spacer></v-spacer>
+          <v-spacer />
           <v-btn
             class="linkTextBright"
             large
@@ -70,13 +70,13 @@
           >
             Sign Up
           </v-btn>
-          <v-spacer class="d-block d-md-none"></v-spacer>
+          <v-spacer class="d-block d-md-none" />
         </v-card-actions>
       </v-card>
     </v-dialog>
     <octo-email-saved
-    ref="dialog01"
-    timeout="3000"
+      ref="dialog01"
+      timeout="3000"
     />
   </v-row>
 </template>
@@ -109,9 +109,8 @@
       },
       async save_email () {
         const token = await this.recaptcha()
-        console.log(token)
         this.emailRulesProp = this.emailRules
-        if (this.test_email(this.email)) {          
+        if (this.test_email(this.email)) {
           let adress = 'https://us-central1-octomancer-website.cloudfunctions.net/uploadEmail'
           adress += '?text=' + this.email
           adress += '&token=' + token

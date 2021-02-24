@@ -46,30 +46,30 @@
       </v-col>
     </v-row>
     <v-row
-    align="center"
-    justify="center"
-    class="d-flex d-md-none"
+      align="center"
+      justify="center"
+      class="d-flex d-md-none"
     >
       <v-col cols="auto">
         <octo-closed-beta-button
-        class="text-wrap mt-4 mb-4"
+          class="text-wrap mt-4 mb-4"
         />
       </v-col>
     </v-row>
     <v-row>
       <v-col>
         <v-divider />
-            <div class="pb-2" />
+        <div class="pb-2" />
         <v-row
-        align="center"
-        justify="center"
-        dense
-        no-gutters
+          align="center"
+          justify="center"
+          dense
+          no-gutters
         >
           <v-col
-          class="d-none d-lg-block"
-          cols="2"
-          lg="1"
+            class="d-none d-lg-block"
+            cols="2"
+            lg="1"
           >
             <base-subtitle
               title="Genre:"
@@ -83,29 +83,28 @@
             <octo-genre />
           </v-col>
         </v-row>
-    <div class="pb-3" />
+        <div class="pb-3" />
         <v-divider />
       </v-col>
     </v-row>
     <v-row>
       <v-col>
         <octo-tags />
-            <div class="pb-3">
-            </div>
+        <div class="pb-3" />
         <v-divider class="d-none d-md-block" />
       </v-col>
     </v-row>
     <v-row
-    align="center"
-    justify="center"
-    class="d-none d-md-flex"
+      align="center"
+      justify="center"
+      class="d-none d-md-flex"
     >
       <v-col
-      cols="auto"
-      align-self="center"
+        cols="auto"
+        align-self="center"
       >
         <octo-closed-beta-button
-        class="text-wrap mt-2 mb-2"
+          class="text-wrap mt-2 mb-2"
         />
       </v-col>
     </v-row>

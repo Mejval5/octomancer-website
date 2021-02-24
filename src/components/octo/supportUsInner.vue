@@ -20,8 +20,10 @@
           @click="goBack"
         >
           <v-icon
-          class="mr-auto"
-          >mdi-keyboard-backspace</v-icon>
+            class="mr-auto"
+          >
+            mdi-keyboard-backspace
+          </v-icon>
         </v-btn>
       </v-col>
     </v-row>
@@ -43,11 +45,11 @@
           >
             <v-btn
               large
-              @click="goBack"
               class="rounded-lg d-block"
               style="height: 100%;"
               color="transparent"
               elevation="0"
+              @click="goBack"
             >
               <v-icon>mdi-keyboard-backspace</v-icon>
             </v-btn>
@@ -62,24 +64,24 @@
           <v-spacer class="d-none d-sm-block" />
         </v-row>
         <v-row
-        dense
-        align-content="center"
-        justify="center"
-        no-gutters
-        class="d-sm-none mb-15"
-      >
-        <v-col>
-          <v-btn
-            block
-            color="transparent"
-            class="mb-15"
-            elevation="0"
-            @click="goBack"
-          >
-            <v-icon>mdi-keyboard-backspace</v-icon>
-          </v-btn>
-        </v-col>
-      </v-row>
+          dense
+          align-content="center"
+          justify="center"
+          no-gutters
+          class="d-sm-none mb-15"
+        >
+          <v-col>
+            <v-btn
+              block
+              color="transparent"
+              class="mb-15"
+              elevation="0"
+              @click="goBack"
+            >
+              <v-icon>mdi-keyboard-backspace</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
       </div>
     </div>
   </v-container>

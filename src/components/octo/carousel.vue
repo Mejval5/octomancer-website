@@ -13,7 +13,7 @@
       show-arrows-on-hover
       hide-delimiter-background
       delimiter-icon="mdi-hexagon-outline"
-      :height=carouselHeight
+      :height="carouselHeight"
       @change="
         carouselVal=0
       "
@@ -120,15 +120,15 @@
         model: 0,
       }
     },
+    computed: {
+      carouselHeight () {
+        return this.$vuetify.breakpoint.mdAndUp ? '70vh' : '70vh'
+      },
+    },
     watch: {
       visible: function () {
         this.carouselVal = 0
         this.model = 0
-      },
-    },
-    computed: {
-      carouselHeight () {
-        return this.$vuetify.breakpoint.mdAndUp ? '70vh' : '70vh'
       },
     },
     mounted: function () {
