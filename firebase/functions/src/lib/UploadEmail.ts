@@ -1,8 +1,9 @@
 /* eslint max-len: ["error", { "code": 200 }]*/
 import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
-const rp = require("request-promise");
+import {secret_key} from "./secret_key";
 
+const rp = require("request-promise");
 const cors = require("cors")({origin: true});
 const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,5})+$/;
 
@@ -15,7 +16,7 @@ export const _uploadEmail = functions.https.onRequest(
           uri: "https://recaptcha.google.com/recaptcha/api/siteverify",
           method: "POST",
           formData: {
-            secret: "6Ldd-2UaAAAAAMrg3OLUh2hRJtiQnk842I2Nn2z9",
+            secret: secret_key,
             response: tokenString,
           },
           json: true,
