@@ -6,7 +6,7 @@ export default function () {
     name: 'DanParallax',
 
     methods: {
-      debug: true,
+      debug: false,
       stop: false,
       pause: false,
       async run (desktop) {
