@@ -15,7 +15,6 @@ module.exports = {
   parserOptions: {
     project: ["tsconfig.json", "tsconfig.dev.json"],
     sourceType: "module",
-    root: true,
   },
   ignorePatterns: [
     "/lib/**/*", // Ignore built files.
@@ -25,6 +24,7 @@ module.exports = {
     "import",
   ],
   rules: {
-    quotes: ["error", "double"],
+    "quotes": ["error", "double"],
+    "linebreak-style": 0,
   },
 };

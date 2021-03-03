@@ -2,7 +2,7 @@
   <v-container
     v-scroll.self="onScroll"
     fluid
-    class="overflow-y-auto hideScroll"
+    class="overflow-y-auto hideScroll justify-center"
     style="height: inherit;"
   >
     <v-row
@@ -28,14 +28,14 @@
       </v-col>
     </v-row>
     <div
-      :class="centerOnPC"
+    :class="centerOnPC"
     >
       <div
         class="rounded"
       >
         <v-row
           dense
-          align="center"
+          align-content="center"
           justify="center"
         >
           <v-col
@@ -59,6 +59,7 @@
             cols="12"
             md="11"
             lg="10"
+            align-self="stretch"
           >
             <octo-devs />
           </v-col>
@@ -69,7 +70,7 @@
           align-content="center"
           justify="center"
           no-gutters
-          class="d-md-none mb-15"
+          class="d-md-none mb-0"
         >
           <v-col>
             <v-btn
@@ -84,7 +85,7 @@
           </v-col>
         </v-row>
       </div>
-    </div>
+      </div>
   </v-container>
 </template>
 
@@ -115,7 +116,7 @@
     },
     computed: {
       centerOnPC () {
-        return this.$vuetify.breakpoint.lgAndUp ? 'center' : ''
+        return this.$vuetify.breakpoint.height > 850 && this.$vuetify.breakpoint.mdAndUp ? 'center' : ''
       },
     },
     methods: {

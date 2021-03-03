@@ -35,7 +35,7 @@
       >
         <v-row
           dense
-          align="center"
+          align="start"
           justify="center"
         >
           <v-col
@@ -87,7 +87,7 @@
           align-content="center"
           justify="center"
           no-gutters
-          class="d-md-none mb-15"
+          class="d-md-none mb-3"
         >
           <v-col>
             <v-btn
@@ -135,7 +135,7 @@
     },
     computed: {
       centerOnPC () {
-        return this.$vuetify.breakpoint.lgAndUp ? 'center' : ''
+        return this.$vuetify.breakpoint.height > 850 && this.$vuetify.breakpoint.mdAndUp ? 'center' : ''
       },
     },
     methods: {

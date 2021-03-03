@@ -5,7 +5,7 @@ import {secretKey} from "./SecretKey";
 
 const rp = require("request-promise");
 const cors = require("cors")({origin: true});
-const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,5})+$/;
+const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,10})+$/;
 
 export const _uploadEmail = functions.https.onRequest(
     async (request, response) => {
@@ -29,7 +29,7 @@ export const _uploadEmail = functions.https.onRequest(
           const doc = await docMailRef.get();
           let processed = false;
           if (doc.exists) {
-            processed = doc.data().processed;
+            processed = doc?.data()?.processed;
           }
           docMailRef.set({
             "mail": emailString,

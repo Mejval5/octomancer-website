@@ -114,7 +114,7 @@
     },
     computed: {
       centerOnPC () {
-        return this.$vuetify.breakpoint.smAndUp ? 'center' : ''
+        return this.$vuetify.breakpoint.height > 580 && this.$vuetify.breakpoint.smAndUp ? 'center' : ''
       },
     },
     methods: {

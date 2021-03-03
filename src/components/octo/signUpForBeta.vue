@@ -101,7 +101,7 @@
       dialog: false,
       email: '',
       emailRules: [
-        v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,5})+$/.test(v) || 'E-mail must be valid',
+        v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,10})+$/.test(v) || 'E-mail must be valid',
       ],
       emailRulesProp: [],
     }),
@@ -119,7 +119,7 @@
         this.emailRulesProp = []
       },
       test_email (mail) {
-        const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,5})+$/
+        const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,10})+$/
         return re.test(mail)
       },
       async save_email () {

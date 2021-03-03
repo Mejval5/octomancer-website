@@ -588,6 +588,7 @@ text-shadow: 0 0 1vh rgba(255,255,255,0.0);
 font-size: 4vh;
 padding-top: 23%;
 font-weight: 700;
+opacity: 1;
 position: relative;
 z-index: 999!important;
 pointer-events: auto;
@@ -627,8 +628,16 @@ color: inherit;
   opacity: 1;
   text-shadow: 0 0 1vh rgba(255,255,255,0.0);
 }
+.v-btn__content {
+  opacity: 1;
+}
 .buttonClass {
+  font-size: max(min(max(2vh, 2vw), 20px),10px);
+  opacity: 1 !important;
+}
+.buttonClass .span {
   font-size: 2vh;
+  opacity: 1 !important;
 }
 .v-expansion-panel-content {
   background-color: transparent;

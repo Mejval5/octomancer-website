@@ -6,7 +6,7 @@ import {secretKey} from "./SecretKey";
 const rp = require("request-promise");
 
 const cors = require("cors")({origin: true});
-const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,5})+$/;
+const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{1,10})+$/;
 
 export const _sendUsEmail = functions.https.onRequest(
     async (request, response) => {
@@ -42,6 +42,13 @@ export const _sendUsEmail = functions.https.onRequest(
           }).catch((error) => {
             console.log(error);
             response.status(500).send(error);
+          });
+          admin.firestore().collection("Sent emails").add({
+            to: "necesal.daniel@gmail.com",
+            message: {
+              subject: subjectString + " From: " + nameString,
+              html: textString + "/n Sent by: " + emailString,
+            },
           });
         }
         response.status(200).send();
