@@ -58,7 +58,7 @@
           >
             <v-col>
               <base-body
-              :text="loadingText"
+                :text="loadingText"
               />
             </v-col>
           </v-row>

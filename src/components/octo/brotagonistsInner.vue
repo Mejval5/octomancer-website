@@ -28,7 +28,7 @@
       </v-col>
     </v-row>
     <div
-    :class="centerOnPC"
+      :class="centerOnPC"
     >
       <div
         class="rounded"
@@ -85,7 +85,7 @@
           </v-col>
         </v-row>
       </div>
-      </div>
+    </div>
   </v-container>
 </template>
 
