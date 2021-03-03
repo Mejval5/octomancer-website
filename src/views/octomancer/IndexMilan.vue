@@ -24,32 +24,52 @@
               class="pa-0"
               cols="12"
               style="display: block; height: 100%;"
-              >
+            >
               <octo-main-menu />
             </v-col>
           </v-row>
         </div>
       </div>
-    <v-overlay
-      :opacity="1"
-      :value="!hideOverlay"
-      ref="overlay"
-      style="position: absolute; z-index: 3000;"
-      color="rgba(8,18,20,1)"
-    >
-      <v-progress-circular
-      indeterminate
-      color="grey lighten-5"
+      <v-overlay
+        ref="overlay"
+        :opacity="1"
+        :value="!hideOverlay"
+        style="position: absolute; z-index: 3000;"
+        color="rgba(8,18,20,1)"
       >
-      </v-progress-circular>
-    </v-overlay>
+        <v-container>
+          <v-row
+            align="center"
+            justify="center"
+          >
+            <v-col
+              align-self="center"
+            >
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+                class="mx-auto d-block"
+              />
+            </v-col>
+          </v-row>
+          <v-row
+            align="center"
+            justify="center"
+          >
+            <v-col>
+              <base-body
+              :text="loadingText"
+              />
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-overlay>
     </v-container>
   </v-expand-x-transition>
 </template>
 
 <script>
-  import Parallax from '@/plugins/parallax.js'
-  import DanParallax from '@/plugins/danparallax.js'
+  import messages from '@/plugins/funnyLoadingMessages.js'
 
   // Extensions
   import View from '@/views/View'
@@ -72,6 +92,7 @@
 
     data: () => ({
       hideOverlay: false,
+      loadingText: '',
     }),
 
     computed: {
@@ -93,18 +114,23 @@
       },
     },
 
-    methods: {
-      async hideOverlayFunc () {
-        const randomWait = (Math.random() + 1) * 300 + 300 * this.$vuetify.breakpoint.mdAndDown
-        await new Promise(resolve => setTimeout(resolve, randomWait))
-        this.hideOverlay = true
-      },
+    beforeMount () {
+      const randomPick = Math.floor(messages.length * Math.random())
+      this.loadingText = messages[randomPick]
     },
 
     mounted () {
       this.$nextTick(() => {
         this.hideOverlayFunc()
       })
+    },
+
+    methods: {
+      async hideOverlayFunc () {
+        const randomWait = (Math.random() + 1) * 1000 + 500 * this.$vuetify.breakpoint.mdAndDown
+        await new Promise(resolve => setTimeout(resolve, randomWait))
+        this.hideOverlay = true
+      },
     },
 
     metaInfo: { title: 'Octomancer' },

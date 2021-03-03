@@ -15,17 +15,28 @@
       />
 
       <base-text-field
+        id="frmNameA"
         v-model="name"
         label="Name"
         :rules="nameRules"
         validate-on-blur
+        name="name"
+        required
+        autocomplete="name"
+        class="contactForm"
       />
 
       <base-text-field
+        id="frmEmailA"
         v-model="email"
         label="Email"
         :rules="emailRules"
         validate-on-blur
+        type="email"
+        name="email"
+        required
+        autocomplete="email"
+        class="contactForm"
       />
 
       <base-text-field
@@ -107,8 +118,8 @@
         return this.name !== '' && this.email !== '' && this.subject !== '' && this.text !== ''
       },
       async save_email () {
-        const token = await this.recaptcha()
         this.validate()
+        const token = await this.recaptcha()
         if (this.test_email(this.email) && this.are_all_fields_filled()) {
           let adress = 'https://us-central1-octomancer-website.cloudfunctions.net/sendUsEmail'
           adress += '?name=' + this.name
@@ -155,3 +166,19 @@
     inject: ['theme'],
   }
 </script>
+
+<style scoped>
+.contactForm :-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #031c28 inset !important;
+  transition: all 10000s ease-in-out 0s;
+  -webkit-text-fill-color: white;
+}
+</style>

@@ -57,11 +57,13 @@
           <v-col
             class="pr-md-5"
             cols="12"
-            sm="10"
+            md="11"
+            lg="10"
           >
-            <octo-contact-us />
+            <octo-contact-us
+              ref="contactUs"
+            />
           </v-col>
-          <v-spacer class="d-none d-sm-block" />
         </v-row>
         <v-row
           dense
@@ -120,6 +122,7 @@
     methods: {
       onScroll () {},
       goBack () {
+        this.$refs.contactUs.resetForm()
         this.$emit('clicked', 'second')
       },
     },

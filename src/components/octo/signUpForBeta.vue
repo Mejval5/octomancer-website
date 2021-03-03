@@ -27,7 +27,10 @@
                   icon
                   tile
                   dark
-                  @click="dialog = false"
+                  @click="
+                    email = ''
+                    dialog = false
+                  "
                 >
                   <v-icon>mdi-close</v-icon>
                 </v-btn>
@@ -40,6 +43,7 @@
             <v-row>
               <v-col cols="12">
                 <v-text-field
+                  id="frmEmailA"
                   ref="textField"
                   v-model="email"
                   :rules="emailRulesProp"
@@ -48,6 +52,9 @@
                   label="Email"
                   required
                   outlined
+                  type="email"
+                  name="email"
+                  autocomplete="email"
                 />
               </v-col>
             </v-row>
@@ -98,6 +105,14 @@
       ],
       emailRulesProp: [],
     }),
+
+    watch: {
+      $route (to, from) {
+        this.email = ''
+        this.dialog = false
+      },
+    },
+
     methods: {
       openPopup () {
         this.dialog = true
@@ -108,8 +123,8 @@
         return re.test(mail)
       },
       async save_email () {
-        const token = await this.recaptcha()
         this.emailRulesProp = this.emailRules
+        const token = await this.recaptcha()
         if (this.test_email(this.email)) {
           let adress = 'https://us-central1-octomancer-website.cloudfunctions.net/uploadEmail'
           adress += '?text=' + this.email
@@ -162,5 +177,18 @@
 // Disgusting legend hack to center it ()
 .centered-input.v-text-field legend {
       margin-left: calc(50% - 39px/2 - 2px);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #031c28 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: white;
 }
 </style>
