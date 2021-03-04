@@ -3,6 +3,7 @@
     class="ma-2"
     v-bind="$attrs"
     outlined
+    ref="chip01"
     v-on="$listeners"
     @click="clickedAnimation"
   >
@@ -24,13 +25,24 @@
       icon: String,
       iconColor: String,
     },
+    mounted () {
+      this.bounce()
+      console.log('hi')
+    },
     methods: {
+      async bounce () {
+        const randWait = (Math.random() * 3 + 1) * 100
+        await new Promise(resolve => setTimeout(resolve, randWait))
+        this.bounceAnim(await this.$refs.chip01.$el)
+      },
       async clickedAnimation (e) {
         var target = e.path[1]
         if (target.nodeName === 'SPAN') {
           target = e.path[2]
         }
-
+        this.bounceAnim(target)
+      },
+      async bounceAnim (target) {        
         target.className += ' getBig'
         await new Promise(resolve => setTimeout(resolve, 200))
         target.classList.remove('getBig')
