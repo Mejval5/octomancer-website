@@ -129,7 +129,7 @@
 
     methods: {
       async hideOverlayFunc () {
-        const randomWait = (Math.random() + 1) * 200 + 800 * this.$vuetify.breakpoint.mdAndDown
+        const randomWait = (Math.random() + 1) * 500 + 800 * this.$vuetify.breakpoint.mdAndDown
         await new Promise(resolve => setTimeout(resolve, randomWait))
         this.hideOverlay = true
       },
