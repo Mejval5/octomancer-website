@@ -67,7 +67,8 @@
           <v-col
             cols="12"
             md="5"
-            lg="4"
+            lg="5"
+            xl="4"
             order="0"
             order-md="2"
           >

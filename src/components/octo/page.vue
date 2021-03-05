@@ -20,7 +20,7 @@
           style="height: inherit"
           class="hideScroll"
           cols="12"
-          lg="11"
+          lg="12"
           xl="10"
         >
           <slot

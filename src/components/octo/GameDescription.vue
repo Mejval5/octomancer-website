@@ -30,7 +30,7 @@
               title="Features:"
               class="octoPrimaryText"
               size="title"
-              mobile-size="subtitle-1"
+              mobile-size="title"
               space="0"
             />
           </v-col>
@@ -41,6 +41,7 @@
           :html="f.html"
           :icon="f.icon"
           :iconColor="f.iconColor"
+          :loaded="loaded"
         />
         <div class="pb-3 d-flex d-md-none" />
         <v-divider class="d-flex d-md-none" />
