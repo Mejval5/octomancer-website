@@ -28,10 +28,10 @@
       </v-col>
     </v-row>
     <div
-      :class="centerOnPC"
+      :class="divClass"
     >
       <div
-        class="rounded"
+      class="rounded"
       >
         <v-row
           dense
@@ -58,6 +58,7 @@
             class="pr-sm-5"
             cols="12"
             sm="10"
+            ref="devs"
           >
             <octo-support-us />
           </v-col>
@@ -68,7 +69,7 @@
           align-content="center"
           justify="center"
           no-gutters
-          class="d-sm-none mb-15"
+          class="d-sm-none mb-3"
         >
           <v-col>
             <v-btn
@@ -110,14 +111,27 @@
           'assets/octoPR/05.jpg',
           'assets/octoPR/06.jpg',
         ],
+        divClass: '',
       }
     },
-    computed: {
-      centerOnPC () {
-        return this.$vuetify.breakpoint.height > 580 && this.$vuetify.breakpoint.smAndUp ? 'center' : ''
-      },
+    mounted () {
+      // Register an event listener when the Vue component is ready
+      window.addEventListener('resize', this.onResize)
+      this.onResize()
+    },
+
+    beforeDestroy () {
+      // Unregister the event listener before destroying this Vue instance
+      window.removeEventListener('resize', this.onResize)
     },
     methods: {
+      onResize () {
+        if (this.$refs.devs.clientHeight + 10 < this.$vuetify.breakpoint.height && this.$vuetify.breakpoint.mdAndUp) {
+          this.divClass = 'center'
+        } else {
+          this.divClass = ''
+        }
+      },
       onScroll () {},
       goBack () {
         this.$emit('clicked', 'second')

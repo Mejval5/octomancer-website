@@ -122,7 +122,7 @@
     },
     computed: {
       carouselHeight () {
-        return Math.ceil(Math.min(this.$vuetify.breakpoint.height * 0.95, 840)).toString() + 'px'
+        return Math.ceil(Math.min(this.$vuetify.breakpoint.height * 0.95, 800)).toString() + 'px'
       },
     },
     watch: {

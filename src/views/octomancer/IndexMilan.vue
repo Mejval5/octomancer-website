@@ -25,7 +25,9 @@
               cols="12"
               style="display: block; height: 100%;"
             >
-              <octo-main-menu />
+              <octo-main-menu
+              :loadedBG="hideOverlay"
+              />
             </v-col>
           </v-row>
         </div>
@@ -127,7 +129,7 @@
 
     methods: {
       async hideOverlayFunc () {
-        const randomWait = (Math.random() + 1) * 1000 + 500 * this.$vuetify.breakpoint.mdAndDown
+        const randomWait = (Math.random() + 1) * 200 + 800 * this.$vuetify.breakpoint.mdAndDown
         await new Promise(resolve => setTimeout(resolve, randomWait))
         this.hideOverlay = true
       },

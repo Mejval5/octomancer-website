@@ -28,7 +28,7 @@
       </v-col>
     </v-row>
     <div
-      :class="centerOnPC"
+      :class="divClass"
     >
       <div
         class="rounded"
@@ -60,8 +60,9 @@
             md="6"
             lg="6"
             order="1"
+            ref="devs"
           >
-            <octo-game-description />
+            <octo-game-description :loaded="loadedBG" />
           </v-col>
           <v-col
             cols="12"
@@ -72,7 +73,7 @@
           >
             <octo-carousel
               :images="images"
-              :visible="visible"
+              :visible="true"
               :time="3"
             />
           </v-col>
@@ -117,6 +118,7 @@
       subtitle: String,
       title: String,
       visible: Boolean,
+      loadedBG: Boolean,
     },
     data () {
       return {
@@ -131,14 +133,27 @@
           'assets/octoPR/CampaignMap1.jpg',
 
         ],
+        divClass: '',
       }
     },
-    computed: {
-      centerOnPC () {
-        return this.$vuetify.breakpoint.height > 850 && this.$vuetify.breakpoint.mdAndUp ? 'center' : ''
-      },
+    mounted () {
+      // Register an event listener when the Vue component is ready
+      window.addEventListener('resize', this.onResize)
+      this.onResize()
+    },
+
+    beforeDestroy () {
+      // Unregister the event listener before destroying this Vue instance
+      window.removeEventListener('resize', this.onResize)
     },
     methods: {
+      onResize () {
+        if (this.$refs.devs.clientHeight + 10 < this.$vuetify.breakpoint.height && this.$vuetify.breakpoint.mdAndUp) {
+          this.divClass = 'center'
+        } else {
+          this.divClass = ''
+        }
+      },
       onScroll () {},
       goBack () {
         this.$emit('clicked', 'first')

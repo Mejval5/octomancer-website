@@ -4,7 +4,7 @@
   >
     <v-col
       cols="12"
-      sm="6"
+      sm="8"
       :order="reverseOrder"
     >
       <octo-dev-info-text
@@ -16,7 +16,7 @@
     </v-col>
     <v-col
       cols="12"
-      sm="6"
+      sm="4"
       align-self="stretch"
       order="-1"
       order-sm="2"
@@ -38,8 +38,8 @@
               color="grey lighten-5"
             >
               <v-sheet
-                width="30vh"
-                height="30vh"
+                width="350px"
+                height="350px"
                 color="#0c2d3daa"
                 class="clip"
               />

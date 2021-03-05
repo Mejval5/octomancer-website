@@ -31,11 +31,31 @@ const router = new Router({
         {
           path: '/',
           name: 'Octomancer',
+          meta: { pageName: 'mainMenu' },
           component: () => import('@/views/octomancer/IndexMilan.vue'),
         },
         {
-          path: '/:pageName',
-          name: 'Octomancer nav',
+          path: '/octomancer',
+          name: 'Octomancer page',
+          meta: { pageName: 'octomancerPage' },
+          component: () => import('@/views/octomancer/IndexMilan.vue'),
+        },
+        {
+          path: '/brotagonists',
+          name: 'Brotagonists',
+          meta: { pageName: 'brotagonistsPage' },
+          component: () => import('@/views/octomancer/IndexMilan.vue'),
+        },
+        {
+          path: '/supportUs',
+          name: 'Support Us',
+          meta: { pageName: 'supportUsPage' },
+          component: () => import('@/views/octomancer/IndexMilan.vue'),
+        },
+        {
+          path: '/contact',
+          name: 'Contact',
+          meta: { pageName: 'contactPage' },
           component: () => import('@/views/octomancer/IndexMilan.vue'),
         },
         {

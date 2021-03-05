@@ -8,7 +8,9 @@
       sm="1"
       class="text-center"
     >
-      <v-icon>
+      <v-icon
+      :color="iconColor"
+      >
         {{ icon }}
       </v-icon>
     </v-col>
@@ -30,6 +32,10 @@
     props: {
       text: String,
       html: String,
+      iconColor: {
+        type: String,
+        default: 'primary',
+      },
       icon: {
         type: String,
         default: 'mdi-heart',

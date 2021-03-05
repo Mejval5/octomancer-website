@@ -63,7 +63,7 @@
         Send message
       </v-btn>
       <div
-        class="primaryText mb-5 text-caption"
+        class="primaryText mb-5 smallText"
       >
         This site is protected by reCAPTCHA and the Google
         <a href="https://policies.google.com/privacy">Privacy Policy</a> and
@@ -180,5 +180,8 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #031c28 inset !important;
   transition: all 10000s ease-in-out 0s;
   -webkit-text-fill-color: white;
+}
+.smallText {
+  font-size: 0.7rem !important;
 }
 </style>

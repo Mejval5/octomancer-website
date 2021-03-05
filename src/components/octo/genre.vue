@@ -15,6 +15,7 @@
         :icon-color="item.iconColor"
         color="transparent"
         text-color="primary"
+        :loaded="loaded"
       />
     </v-col>
   </v-row>
@@ -22,13 +23,19 @@
 
 <script>
   export default {
+    props: {
+      loaded: {
+        type: Boolean,
+        default: false,
+      },
+    },
     data () {
       return {
         tags: [
-          { icon: 'mdi-sword-cross', iconColor: 'primary', text: 'Action' },
-          { icon: 'mdi-gamepad-square', iconColor: 'primary', text: 'Arcade' },
-          { icon: 'mdi-flower', iconColor: 'primary', text: 'Casual' },
-          { icon: 'mdi-run-fast', iconColor: 'primary', text: 'Platformer' },
+          { icon: 'mdi-sword-cross', iconColor: 'yellow lighten-3', text: 'Action' },
+          { icon: 'mdi-gamepad-square', iconColor: 'red lighten-1', text: 'Arcade' },
+          { icon: 'mdi-flower', iconColor: 'green', text: 'Casual' },
+          { icon: 'mdi-run-fast', iconColor: 'blue lighten-2', text: 'Platformer' },
         ],
       }
     },
