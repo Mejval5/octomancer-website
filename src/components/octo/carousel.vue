@@ -125,8 +125,8 @@
         return this.$vuetify.breakpoint.mdAndUp ? Math.ceil(Math.min(this.$vuetify.breakpoint.height * 0.95, 750)).toString() + 'px' : '70vh'
       },
       imgClasses () {
-        return this.$vuetify.breakpoint.xsOnly ? "rounded car-img xSmall" : "rounded car-img xSmall"
-      }
+        return this.$vuetify.breakpoint.xsOnly ? 'rounded car-img xSmall' : 'rounded car-img xSmall'
+      },
     },
     watch: {
       visible: function () {
