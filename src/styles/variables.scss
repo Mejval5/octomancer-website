@@ -9,8 +9,10 @@ $rally-text-color: #FFFFFF;
 
 
 // Preset variables
-$body-font-family: 'Open Sans', sans-serif;
-$heading-font-family: 'Raleway', sans-serif;
+$body-font-family: 'Caveat Brush', cursive;
+$heading-font-family: 'Sniglet', cursive;
+$font-size-root: 21px;
+$input-font-size: 21px;
 $btn-font-size: #{14 / $rally-font-size}rem;
 $btn-font-weight: 700;
 $card-box-shadow: none;
@@ -39,15 +41,19 @@ $headings: (
   ),
   'subtitle-1':(
     'font-family': $body-font-family,
+    'font-size': '1.8rem',
   ),
   'subtitle-2':(
     'font-family': $body-font-family,
+    'font-size': '1.3rem',
   ),
   'body-1':(
     'font-family': $body-font-family,
+    'font-size': '1.1rem',
   ),
   'body-2':(
     'font-family': $body-font-family,
+    'font-size': '0.9rem',
   ),
   'caption':(
     'font-family': $body-font-family,

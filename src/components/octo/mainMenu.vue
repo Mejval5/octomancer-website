@@ -14,7 +14,7 @@
         <div
           id="scene"
           data-relative-input="true"
-          :class="getSceneClass"
+          class="scene"
         >
           <div
             id="bg1"
@@ -25,6 +25,7 @@
               :src="require('@/assets/milan/1.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -35,6 +36,7 @@
               :src="require('@/assets/milan/2.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -45,6 +47,7 @@
               :src="require('@/assets/milan/3.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -55,6 +58,7 @@
               :src="require('@/assets/milan/4.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -65,6 +69,7 @@
               :src="require('@/assets/milan/5.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -75,6 +80,7 @@
               :src="require('@/assets/milan/6.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -85,6 +91,7 @@
               :src="require('@/assets/milan/7.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -95,6 +102,7 @@
               :src="require('@/assets/milan/8.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -105,6 +113,7 @@
               :src="require('@/assets/milan/9.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -115,6 +124,7 @@
               :src="require('@/assets/milan/10.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -125,6 +135,7 @@
               :src="require('@/assets/milan/11.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -135,6 +146,7 @@
               :src="require('@/assets/milan/12.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -145,6 +157,7 @@
               :src="require('@/assets/milan/13.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -155,6 +168,7 @@
               :src="require('@/assets/milan/14.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -165,6 +179,7 @@
               :src="require('@/assets/milan/15.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -175,6 +190,7 @@
               :src="require('@/assets/milan/16.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -185,6 +201,7 @@
               :src="require('@/assets/milan/17.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -195,6 +212,7 @@
               :src="require('@/assets/milan/18.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -205,6 +223,7 @@
               :src="require('@/assets/milan/19.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <!--<div data-depth="0.3" class="border"></div>-->
@@ -217,6 +236,7 @@
               width="120%"
               style="margin-left:-10%;margin-top:-10%;"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -228,6 +248,7 @@
               :src="require('@/assets/milan/20.png')"
               width="100%"
               class="gg"
+              eager
             >
           </div>
           <div
@@ -239,10 +260,11 @@
               :src="require('@/assets/milan/Light.png')"
               width="100%"
               class="gg gg1"
+              eager
             >
           </div>
           <div
-            v-show="!showMainMenu"
+            v-show="false"
             id="bg23"
             data-depth="0.84"
             class="bgLight mybg"
@@ -268,7 +290,7 @@
       origin="right center 0"
     >
       <v-card
-        v-show="showMainMenu"
+        v-show="this.pages.mainMenu.val"
         class="overflow-y-auto elevation-0 text-center expansionPanel hideScroll pa-4 rounded"
         style="width: fit-content;"
         max-height="400"
@@ -279,11 +301,7 @@
           text
           plain
           :ripple="false"
-          @click="() => {
-            this.$router.push('/octomancer')
-            showMainMenu = !showMainMenu
-            showOctomancerPage = !showOctomancerPage
-          }"
+          @click="goToPage('octomancerPage')"
         >
           OCTOMANCER
         </v-btn> <br>
@@ -293,11 +311,7 @@
           text
           plain
           :ripple="false"
-          @click="() => {
-            this.$router.push('/brotagonists')
-            showMainMenu = !showMainMenu
-            showBrotagonistsPage = !showBrotagonistsPage
-          }"
+          @click="goToPage('brotagonistsPage')"
         >
           BROTAGONISTS™
         </v-btn> <br>
@@ -307,11 +321,7 @@
           text
           plain
           :ripple="false"
-          @click="() => {
-            this.$router.push('/supportUs')
-            showMainMenu = !showMainMenu
-            showSupportUsPage = true
-          }"
+          @click="goToPage('supportUsPage')"
         >
           SUPPORT US
         </v-btn> <br>
@@ -321,51 +331,52 @@
           text
           plain
           :ripple="false"
-          @click="() => {
-            this.$router.push('/contact')
-            showMainMenu = !showMainMenu
-            showContactPage = !showContactPage
-          }"
+          @click="goToPage('contactPage')"
         >
           CONTACT
         </v-btn>
       </v-card>
     </v-fade-transition>
+
+    <v-overlay
+      class="contain"
+      :value="!this.pages.mainMenu.val"
+      opacity="0.9"
+      color="#090909"
+    >
     <octo-page
-      :visible="showOctomancerPage"
+      :visible="Boolean(this.pages.octomancerPage.val)"
     >
       <octo-octomancer-inner
-        :visible="showOctomancerPage"
-        @clicked="goBack"
+          :loadedBG="loadedBG"
+          @clicked="goToPage('mainMenu')"
       />
     </octo-page>
 
     <octo-page
-      :visible="showBrotagonistsPage"
+      :visible="Boolean(this.pages.brotagonistsPage.val)"
     >
       <octo-brotagonists-inner
-        :visible="showBrotagonistsPage"
-        @clicked="goBack"
+          @clicked="goToPage('mainMenu')"
       />
     </octo-page>
 
     <octo-page
-      :visible="showSupportUsPage"
+      :visible="Boolean(this.pages.supportUsPage.val)"
     >
       <octo-support-us-inner
-        :visible="showSupportUsPage"
-        @clicked="goBack"
+          @clicked="goToPage('mainMenu')"
       />
     </octo-page>
 
     <octo-page
-      :visible="showContactPage"
+      :visible="this.pages.contactPage.val"
     >
       <octo-contact-inner
-        :visible="showContactPage"
-        @clicked="goBack"
+          @clicked="goToPage('mainMenu')"
       />
     </octo-page>
+    </v-overlay>
   </v-col>
 </template>
 
@@ -390,19 +401,30 @@
         type: String,
         default: 'octomancer',
       },
+      loadedBG: Boolean,
     },
 
     data: () => ({
-      showPage: false,
-      showMainMenu: true,
-      showOctomancerPage: false,
-      showBrotagonistsPage: false,
-      showSupportUsPage: false,
-      showContactPage: false,
+      pages: {
+        mainMenu: { val: true, name: 'Octomancer site', route: '/' },
+        octomancerPage: { val: false, name: 'Octomancer', route: '/octomancer' },
+        brotagonistsPage: { val: false, name: 'Brotagonists', route: '/brotagonists' },
+        supportUsPage: { val: false, name: 'Support Us', route: '/supportUs' },
+        contactPage: { val: false, name: 'Contact', route: '/contact' },
+      },
       parallaxInstance: {},
     }),
 
     computed: {
+      CurrentPage () {
+        for (var key in this.pages) {
+          if (this.pages[key].val) {
+            return key
+          }
+        }
+        console.log('bug')
+        return 'wtf'
+      },
       get_mobile_size () {
         if (this.$vuetify.breakpoint.smAndDown) {
           return 'width: 2000px;'
@@ -416,9 +438,6 @@
         var height = '100vh'
         return 'max-height: ' + height + ';'
       },
-      getSceneClass () {
-        return this.showMainMenu ? 'scene' : 'scene'
-      },
     },
 
     watch: {
@@ -426,16 +445,18 @@
         this.parallaxInstance.methods.pause = !this.showMainMenu
       },
       $route (to, from) {
-        this.showMenuByPage()
+        this.UpdatePage(this.$route.meta.pageName)
       },
     },
 
+    beforeMount () {
+      this.UpdatePage(this.$route.meta.pageName)
+    },
     mounted () {
       var scene = document.getElementById('scene')
       // this.parallaxInstance = new Parallax(scene)
       this.$nextTick(() => {
         this.show_image()
-        this.showMenuByPage()
       })
     },
 
@@ -448,29 +469,20 @@
     },
 
     methods: {
-      showMenuByPage () {
-        if (this.$route.params.pageName === 'octomancer') {
-          this.showOctomancerPage = true
-          this.showMainMenu = false
+      goToPage (page) {
+        if (this.$route.fullPath !== this.pages[page].route) {
+          this.$router.push(this.pages[page].route)
         }
-        if (this.$route.params.pageName === 'brotagonists') {
-          this.showBrotagonistsPage = true
-          this.showMainMenu = false
-        }
-        if (this.$route.params.pageName === 'supportUs') {
-          this.showSupportUsPage = true
-          this.showMainMenu = false
-        }
-        if (this.$route.params.pageName === 'contact') {
-          this.showContactPage = true
-          this.showMainMenu = false
-        }
-        if (this.$route.params.pageName == null) {
-          this.showOctomancerPage = false
-          this.showBrotagonistsPage = false
-          this.showSupportUsPage = false
-          this.showContactPage = false
-          this.showMainMenu = true
+      },
+      UpdatePage (page) {
+        if (Object.keys(this.pages).indexOf(page) > -1) {
+          for (var key in this.pages) {
+            if (key === page) {
+              this.pages[key].val = true
+              continue
+            }
+            this.pages[key].val = false
+          }
         }
       },
       onScroll () {},
@@ -493,16 +505,6 @@
       updateParallax () {
         this.parallaxInstance.methods.pause = this.$vuetify.breakpoint.mdAndDown || !this.showMainMenu
       },
-      goBack (value) {
-        if (value === 'first') {
-          this.showOctomancerPage = false
-        }
-        if (value === 'second') {
-          this.showBrotagonistsPage = false
-        }
-        this.showMainMenu = true
-        this.$router.push('/')
-      },
     },
 
     metaInfo: { title: 'Octomancer' },
@@ -516,6 +518,18 @@
 
 body {background-color:#e0e0e0;}
 body {background-color:rgba(8,18,20,1);color: white;font-family: 'Quicksand', sans-serif;}
+
+.contain >>> .v-overlay__content {
+  height: inherit !important;
+  width: inherit !important;
+}
+
+.contain {
+  height: 100%;
+  width: 100%;
+  z-index: 4500 !important;
+  position: absolute;
+}
 
 .parent {
 position: relative;
@@ -632,7 +646,7 @@ color: inherit;
   opacity: 1;
 }
 .buttonClass {
-  font-size: max(min(max(2vh, 2vw), 20px),10px);
+  font-size: max(min(max(3vh, 3vw), 25px),15px);
   opacity: 1 !important;
 }
 .buttonClass .span {

@@ -20,12 +20,11 @@
           style="height: inherit"
           class="hideScroll"
           cols="12"
-          lg="11"
-          xl="9"
+          lg="12"
+          xl="10"
         >
           <slot
             :visible="visible"
-            @clicked="clicked"
           />
         </v-col>
       </v-row>
@@ -38,11 +37,6 @@
     name: 'Octomancer',
     props: {
       visible: Boolean,
-    },
-    methods: {
-      clicked (value) {
-        this.$emit('clicked', value)
-      },
     },
   }
 </script>

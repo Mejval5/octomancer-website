@@ -1,6 +1,6 @@
 <template>
   <v-chip
-    class="ma-2"
+    class="ma-2 subtitle-1"
     v-bind="$attrs"
     outlined
     ref="chip01"
@@ -24,10 +24,18 @@
       text: String,
       icon: String,
       iconColor: String,
+      loaded: {
+        type: Boolean,
+        default: false,
+      },
+    },
+    watch: {
+      loaded: function (oldVal, newVal) {
+        this.bounce()
+      },
     },
     mounted () {
       this.bounce()
-      console.log('hi')
     },
     methods: {
       async bounce () {
@@ -42,7 +50,7 @@
         }
         this.bounceAnim(target)
       },
-      async bounceAnim (target) {        
+      async bounceAnim (target) {
         target.className += ' getBig'
         await new Promise(resolve => setTimeout(resolve, 200))
         target.classList.remove('getBig')

@@ -59,7 +59,7 @@
               </v-col>
             </v-row>
             <div
-              class="primaryText text-caption"
+              class="primaryText smallText"
             >
               This site is protected by reCAPTCHA and the Google
               <a href="https://policies.google.com/privacy">Privacy Policy</a> and
@@ -190,5 +190,8 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #031c28 inset !important;
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: white;
+}
+.smallText {
+  font-size: 0.7rem !important;
 }
 </style>

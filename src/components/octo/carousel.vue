@@ -80,7 +80,7 @@
         >
           <v-img
             :src="require(`@/${image}`)"
-            class="rounded"
+            :class="imgClasses"
             aspect-ratio="0.5625"
             eager
           />
@@ -122,7 +122,10 @@
     },
     computed: {
       carouselHeight () {
-        return Math.ceil(Math.min(this.$vuetify.breakpoint.height * 0.95, 840)).toString() + 'px'
+        return this.$vuetify.breakpoint.mdAndUp ? Math.ceil(Math.min(this.$vuetify.breakpoint.height * 0.95, 750)).toString() + 'px' : '70vh'
+      },
+      imgClasses () {
+        return this.$vuetify.breakpoint.xsOnly ? 'rounded car-img xSmall' : 'rounded car-img xSmall'
       },
     },
     watch: {
@@ -180,5 +183,12 @@
 .v-carousel__controls__item.v-btn:hover {
   transform: scale(1.5);
   transition: all 0.1s ease-in-out;
+}
+.car-img {
+  height: 100%;
+}
+.v-carousel__controls {
+  height: fit-content;
+  margin-bottom: 6px;
 }
 </style>

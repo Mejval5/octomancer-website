@@ -58,7 +58,7 @@
             class="pr-md-5"
             cols="12"
             md="11"
-            lg="10"
+            lg="11"
             align-self="stretch"
             ref="devs"
           >
@@ -77,7 +77,7 @@
             <v-btn
               block
               color="transparent"
-              class="mb-15"
+              class="mb-3"
               elevation="0"
               @click="goBack"
             >
