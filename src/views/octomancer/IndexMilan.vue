@@ -26,7 +26,7 @@
               style="display: block; height: 100%;"
             >
               <octo-main-menu
-              :loadedBG="hideOverlay"
+                :loaded-b-g="hideOverlay"
               />
             </v-col>
           </v-row>

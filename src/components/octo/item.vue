@@ -1,8 +1,8 @@
 <template>
   <v-row
+    ref="row01"
     no-gutters
     class="py-2 startContainer"
-    ref="row01"
   >
     <v-col
       cols="2"
@@ -10,7 +10,7 @@
       class="text-center"
     >
       <v-icon
-      :color="iconColor"
+        :color="iconColor"
       >
         {{ icon }}
       </v-icon>

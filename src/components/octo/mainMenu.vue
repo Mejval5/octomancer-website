@@ -344,38 +344,38 @@
       opacity="0.9"
       color="#090909"
     >
-    <octo-page
-      :visible="Boolean(this.pages.octomancerPage.val)"
-    >
-      <octo-octomancer-inner
-          :loadedBG="loadedBG"
+      <octo-page
+        :visible="Boolean(this.pages.octomancerPage.val)"
+      >
+        <octo-octomancer-inner
+          :loaded-b-g="loadedBG"
           @clicked="goToPage('mainMenu')"
-      />
-    </octo-page>
+        />
+      </octo-page>
 
-    <octo-page
-      :visible="Boolean(this.pages.brotagonistsPage.val)"
-    >
-      <octo-brotagonists-inner
+      <octo-page
+        :visible="Boolean(this.pages.brotagonistsPage.val)"
+      >
+        <octo-brotagonists-inner
           @clicked="goToPage('mainMenu')"
-      />
-    </octo-page>
+        />
+      </octo-page>
 
-    <octo-page
-      :visible="Boolean(this.pages.supportUsPage.val)"
-    >
-      <octo-support-us-inner
+      <octo-page
+        :visible="Boolean(this.pages.supportUsPage.val)"
+      >
+        <octo-support-us-inner
           @clicked="goToPage('mainMenu')"
-      />
-    </octo-page>
+        />
+      </octo-page>
 
-    <octo-page
-      :visible="this.pages.contactPage.val"
-    >
-      <octo-contact-inner
+      <octo-page
+        :visible="this.pages.contactPage.val"
+      >
+        <octo-contact-inner
           @clicked="goToPage('mainMenu')"
-      />
-    </octo-page>
+        />
+      </octo-page>
     </v-overlay>
   </v-col>
 </template>

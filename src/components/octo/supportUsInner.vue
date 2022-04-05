@@ -31,7 +31,7 @@
       :class="divClass"
     >
       <div
-      class="rounded"
+        class="rounded"
       >
         <v-row
           dense
@@ -55,10 +55,10 @@
             </v-btn>
           </v-col>
           <v-col
+            ref="devs"
             class="pr-sm-5"
             cols="12"
             sm="10"
-            ref="devs"
           >
             <octo-support-us />
           </v-col>

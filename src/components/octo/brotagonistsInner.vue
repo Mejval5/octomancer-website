@@ -55,12 +55,12 @@
             </v-btn>
           </v-col>
           <v-col
+            ref="devs"
             class="pr-md-5"
             cols="12"
             md="11"
             lg="11"
             align-self="stretch"
-            ref="devs"
           >
             <octo-devs />
           </v-col>

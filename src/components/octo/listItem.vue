@@ -1,9 +1,9 @@
 <template>
   <v-chip
+    ref="chip01"
     class="ma-2 subtitle-1"
     v-bind="$attrs"
     outlined
-    ref="chip01"
     v-on="$listeners"
     @click="clickedAnimation"
   >

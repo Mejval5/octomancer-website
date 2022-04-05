@@ -40,7 +40,7 @@
           :key="i"
           :html="f.html"
           :icon="f.icon"
-          :iconColor="f.iconColor"
+          :icon-color="f.iconColor"
           :loaded="loaded"
         />
         <div class="pb-3 d-flex d-md-none" />

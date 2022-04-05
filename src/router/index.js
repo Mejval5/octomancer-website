@@ -59,6 +59,12 @@ const router = new Router({
           component: () => import('@/views/octomancer/IndexMilan.vue'),
         },
         {
+          path: '/app-ads.txt',
+          name: 'AppAds',
+          meta: { pageName: 'AppAds' },
+          component: () => import('@/views/octomancer/ads.vue'),
+        },
+        {
           path: '*',
           redirect: '/',
         },

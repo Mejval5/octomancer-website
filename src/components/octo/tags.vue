@@ -12,7 +12,7 @@
       <octo-list-item
         :text="item.text"
         :icon="item.icon"
-        :iconColor="item.iconColor"
+        :icon-color="item.iconColor"
         color="#48667466"
         text-color="primary"
         :loaded="loaded"

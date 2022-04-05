@@ -55,12 +55,12 @@
             </v-btn>
           </v-col>
           <v-col
+            ref="devs"
             class="pr-md-5"
             cols="12"
             md="6"
             lg="6"
             order="1"
-            ref="devs"
           >
             <octo-game-description :loaded="loadedBG" />
           </v-col>
