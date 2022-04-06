@@ -1,7 +1,7 @@
 <template>
   <v-chip
     ref="chip01"
-    class="ma-2 subtitle-1"
+    class="ma-2 text-subtitle-1"
     v-bind="$attrs"
     outlined
     v-on="$listeners"

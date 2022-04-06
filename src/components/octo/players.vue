@@ -13,7 +13,7 @@
         title="Players: "
         class="primaryText"
         size="subtitle-1"
-        mobile-size="subtitle-2"
+        mobile-size="text-subtitle-2"
         space="0"
       />
     </v-col>
@@ -24,7 +24,7 @@
       <base-subtitle
         title="Multiplayer"
         class="primaryText"
-        size="subtitle-2"
+        size="text-subtitle-2"
         space="0"
       />
     </v-col>

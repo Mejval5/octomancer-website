@@ -48,7 +48,7 @@
 
       <div
         v-if="subtitle"
-        class="mt-4 mb-1 subtitle-1 secondaryText"
+        class="mt-4 mb-1 text-subtitle-1 secondaryText"
         v-text="subtitle"
       />
       <v-divider
@@ -56,7 +56,7 @@
       />
 
       <div
-        class="subtitle-1 my-1 terciaryText"
+        class="text-subtitle-1 my-1 terciaryText"
         v-html="text"
       />
     </v-card-text>

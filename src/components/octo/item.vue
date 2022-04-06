@@ -20,7 +20,7 @@
         :title="text"
         :html="html"
         class="primaryText"
-        size="subtitle-2"
+        size="text-subtitle-2"
         space="0"
       />
     </v-col>

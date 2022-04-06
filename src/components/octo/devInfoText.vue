@@ -18,7 +18,7 @@
       :key="i"
       space="3"
       class="primaryText"
-      mobile-size="subtitle-2"
+      mobile-size="text-subtitle-2"
     >
       <a
         class="text-decoration-none"

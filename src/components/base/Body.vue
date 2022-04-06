@@ -40,7 +40,7 @@
       },
       mobileSize: {
         type: String,
-        default: 'subtitle-2',
+        default: 'text-text-subtitle-2',
       },
       maxWidth: {
         type: [Number, String],

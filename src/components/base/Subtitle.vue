@@ -13,7 +13,7 @@
       },
       mobileSize: {
         type: String,
-        default: 'body-1',
+        default: 'text-body-1',
       },
       space: {
         type: [String, Number],
