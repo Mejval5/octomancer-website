@@ -25,12 +25,6 @@ const router = new Router({
 },
   routes: [
     {
-      path: '/app-ads.txt',
-      name: 'AppAds',
-      meta: { pageName: 'AppAds' },
-      component: () => import('@/views/octomancer/ads.vue'),
-    },
-    {
       path: '/',
       component: () => import('@/layouts/home/Index.vue'),
       children: [
