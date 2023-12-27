@@ -1,1 +1,1 @@
-cmd /k yarn build & firebase deploy
+cmd /k "yarn build & firebase deploy"
