@@ -136,7 +136,6 @@
       },
       onScroll () {},
       goBack () {
-        this.$refs.contactUs.resetForm()
         this.$emit('clicked', 'second')
       },
     },

@@ -157,7 +157,7 @@
       },
       onScroll () {},
       goBack () {
-        this.$emit('clicked', 'first')
+        this.$emit('clicked', 'second')
       },
     },
   }

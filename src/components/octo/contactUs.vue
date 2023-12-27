@@ -1,5 +1,8 @@
 <template>
-  <v-row>
+  <v-row
+      align-content="center"
+      justify="center"
+      >
     <v-col
       cols="12"
       md="6"
@@ -7,12 +10,6 @@
       <base-business-info
         title="FOLLOW US ON SOCIAL MEDIA"
       />
-    </v-col>
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <base-contact-form ref="contactForm" />
     </v-col>
   </v-row>
 </template>
