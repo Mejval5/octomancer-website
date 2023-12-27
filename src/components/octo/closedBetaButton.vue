@@ -1,22 +1,22 @@
 <template>
-  <div>
+  <div class="text-center">
     <v-btn
       elevation="0"
       outlined
       large
       v-bind="$attrs"
       color="yellow lighten-1"
-      href="https://play.google.com/store/apps/details?id=com.brotagonists.octomancer"
+      href="https://raccoon5.itch.io/octomancer"
       target="_blank"
       v-on="$listeners"
     >
-      GET THE GAME!
+      TRY THE GAME!
     </v-btn>
+      <v-col class="text-center orange--text">
+      Google Play version has been taken down due to lack of interest. <br>
+      Play the game on itch.io instead!
+      </v-col>
 
-    <octo-sign-up-for-beta
-      ref="dialogSignUp"
-      style="position: absolute;"
-    />
   </div>
 </template>
 
